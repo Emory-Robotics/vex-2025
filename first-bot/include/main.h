@@ -39,7 +39,8 @@
 /**
  * You should add more #includes here
  */
-//#include "okapi/api.hpp"
+#include "okapi/api.hpp"
+//#include "pros/api_legacy.h"
 
 /**
  * If you find doing pros::Motor() to be tedious and you'd prefer just to do
@@ -51,7 +52,7 @@
  */
 // using namespace pros;
 // using namespace pros::literals;
-// using namespace okapi;
+ using namespace okapi;
 
 /**
  * Prototypes for the competition control tasks are redefined here to ensure
@@ -66,6 +67,40 @@ void initialize(void);
 void disabled(void);
 void competition_initialize(void);
 void opcontrol(void);
+
+// initialization
+extern pros::Controller master;
+extern pros::Controller partner;
+
+extern pros::Motor frontLeft;
+extern pros::Motor backLeft;
+extern pros::Motor frontRight;
+extern pros::Motor backRight;
+
+extern pros::Motor intakeMotorLeft;
+extern pros::Motor intakeMotorRight;
+
+extern pros::Motor elevatorMotorLeft;
+extern pros::Motor elevatorMotorRight;
+
+extern pros::Motor armMotorLeft;
+extern pros::Motor armMotorRight;
+
+extern pros::ADIDigitalOut flapPiston;
+
+extern pros::Vision visionSensor;
+
+extern std::shared_ptr<OdomChassisController> chassis;
+
+// functions
+void skillsAuton();
+void auton(void);
+void driveControl(void);
+void gui(void);
+void intakeControl(void);
+void intake(void);
+void score(void);
+
 #ifdef __cplusplus
 }
 #endif
