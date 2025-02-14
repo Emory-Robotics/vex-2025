@@ -8,9 +8,12 @@ void driveControl(){
     int left = forward - lateral;
     int right = - forward - lateral;
 
-    frontLeft.move_velocity(left * 600.0 / 128.0);
-	backLeft.move_velocity(left * 600.0 / 128.0);
-	frontRight.move_velocity(right * 600.0 / 128.0);
-	backRight.move_velocity(right * 600.0 / 128.0);
+    left1.move_velocity(left * 600.0 / 128.0);
+	left2.move_velocity(left * 600.0 / 128.0);
+    left3.move_velocity(left * 600.0 / 128.0);
+
+	right1.move_velocity(right * 600.0 / 128.0);
+	right2.move_velocity(right * 600.0 / 128.0);
+    right3.move_velocity(right * 600.0 / 128.0);
     
 }

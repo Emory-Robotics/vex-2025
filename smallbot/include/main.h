@@ -72,10 +72,12 @@ void opcontrol(void);
 extern pros::Controller master;
 extern pros::Controller partner;
 
-extern pros::Motor frontLeft;
-extern pros::Motor backLeft;
-extern pros::Motor frontRight;
-extern pros::Motor backRight;
+extern pros::Motor left1;
+extern pros::Motor left2;
+extern pros::Motor left3;
+extern pros::Motor right1;
+extern pros::Motor right2;
+extern pros::Motor right3;
 
 extern pros::Motor intakeMotorLeft;
 extern pros::Motor intakeMotorRight;
@@ -86,7 +88,7 @@ extern pros::Motor elevatorMotorRight;
 extern pros::Motor armMotorLeft;
 extern pros::Motor armMotorRight;
 
-extern pros::ADIDigitalOut flapPiston;
+extern pros::ADIDigitalOut clampPiston;
 
 extern pros::Vision visionSensor;
 
