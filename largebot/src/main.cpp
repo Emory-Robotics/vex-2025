@@ -19,7 +19,7 @@ void initialize() {
  * the robot is enabled, this task will exit.
  */
 void disabled() {
-	flapPiston.set_value(false);
+	clampPiston.set_value(false);
 	chassis->stop();
 }
 
