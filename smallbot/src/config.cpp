@@ -4,21 +4,21 @@ pros::Controller master(pros::E_CONTROLLER_MASTER);
 pros::Controller partner(pros::E_CONTROLLER_PARTNER);
 
 pros::Motor left1(1, pros::E_MOTOR_GEARSET_06);
-pros::Motor left2(2, pros::E_MOTOR_GEARSET_06);
-pros::Motor left3(3, pros::E_MOTOR_GEARSET_06);
+pros::Motor left2(-3, pros::E_MOTOR_GEARSET_06);
+pros::Motor left3(5, pros::E_MOTOR_GEARSET_06);
 
-pros::Motor right1(4, pros::E_MOTOR_GEARSET_06);
-pros::Motor right2(5, pros::E_MOTOR_GEARSET_06);
-pros::Motor right3(6, pros::E_MOTOR_GEARSET_06);
+pros::Motor right1(2, pros::E_MOTOR_GEARSET_06);
+pros::Motor right2(4, pros::E_MOTOR_GEARSET_06);
+pros::Motor right3(-6, pros::E_MOTOR_GEARSET_06);
 
-pros::Motor intakeMotorLeft(7, pros::E_MOTOR_GEARSET_06);
-pros::Motor intakeMotorRight(8, pros::E_MOTOR_GEARSET_06);
+pros::Motor intakeMotorLeft(-11, pros::E_MOTOR_GEARSET_06);
+pros::Motor intakeMotorRight(-12, pros::E_MOTOR_GEARSET_06);
 
-pros::Motor elevatorMotorLeft(9, pros::E_MOTOR_GEARSET_06);
-pros::Motor elevatorMotorRight(10, pros::E_MOTOR_GEARSET_06);
+pros::Motor elevatorMotorLeft(7, pros::E_MOTOR_GEARSET_06);
+pros::Motor elevatorMotorRight(8, pros::E_MOTOR_GEARSET_06);
 
-pros::Motor armMotorLeft(11, pros::E_MOTOR_GEARSET_36);
-pros::Motor armMotorRight(12, pros::E_MOTOR_GEARSET_36);
+pros::Motor armMotorLeft(13, pros::E_MOTOR_GEARSET_36);
+pros::Motor armMotorRight(14, pros::E_MOTOR_GEARSET_36);
 
 
 pros::ADIDigitalOut clampPiston ('A');

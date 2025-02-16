@@ -3,35 +3,37 @@
 pros::Controller master(pros::E_CONTROLLER_MASTER);
 pros::Controller partner(pros::E_CONTROLLER_PARTNER);
 
-pros::Motor left1(1, pros::E_MOTOR_GEARSET_06);
-pros::Motor left2(-2, pros::E_MOTOR_GEARSET_06); // bottom middle
-pros::Motor left3(3, pros::E_MOTOR_GEARSET_06);
-pros::Motor left4(4, pros::E_MOTOR_GEARSET_06);
+pros::Motor right1(1, pros::E_MOTOR_GEARSET_06);
+pros::Motor right2(2, pros::E_MOTOR_GEARSET_06);
+pros::Motor right3(3, pros::E_MOTOR_GEARSET_06);
+pros::Motor right4(-4, pros::E_MOTOR_GEARSET_06); // bottom middle
 
-pros::Motor right1(5, pros::E_MOTOR_GEARSET_06);
-pros::Motor right2(-6, pros::E_MOTOR_GEARSET_06); // bottom middle
-pros::Motor right3(7, pros::E_MOTOR_GEARSET_06);
-pros::Motor right4(8, pros::E_MOTOR_GEARSET_06);
+pros::Motor left1(5, pros::E_MOTOR_GEARSET_06);
+pros::Motor left2(6, pros::E_MOTOR_GEARSET_06);
+pros::Motor left3(-7, pros::E_MOTOR_GEARSET_06); // bottom middle
+pros::Motor left4(8, pros::E_MOTOR_GEARSET_06);
 
-pros::Motor intakeMotorLeft(9, pros::E_MOTOR_GEARSET_06);
-pros::Motor intakeMotorRight(10, pros::E_MOTOR_GEARSET_06);
+pros::Motor intakeMotorLeft(11, pros::E_MOTOR_GEARSET_06);
+pros::Motor intakeMotorRight(12, pros::E_MOTOR_GEARSET_06);
 
-pros::Motor elevatorMotorLeft(11, pros::E_MOTOR_GEARSET_06);
-pros::Motor elevatorMotorRight(12, pros::E_MOTOR_GEARSET_06);
+pros::Motor elevatorMotorLeft(13, pros::E_MOTOR_GEARSET_06);
+pros::Motor elevatorMotorRight(14, pros::E_MOTOR_GEARSET_06);
 
-pros::Motor armMotorLeft(13, pros::E_MOTOR_GEARSET_36);
-pros::Motor armMotorRight(14, pros::E_MOTOR_GEARSET_36);
+pros::Motor armMotorLeft(15, pros::E_MOTOR_GEARSET_36);
+pros::Motor armMotorRight(16, pros::E_MOTOR_GEARSET_36);
 
 
 pros::ADIDigitalOut clampPiston ('A');
 
-pros::Vision visionSensor(11);
+pros::Vision visionSensor(17);
+
+pros::Motor_Group left ({left1, left2, left3, left4});
+pros::Motor_Group right ({right1, right2, right3, right4});
 
 std::shared_ptr<OdomChassisController> chassis =
       ChassisControllerBuilder()
-        .withMotors({-1, -3}, {2, 4})
-        // Blue gearset, 4 in in wheel diam, 26 cm in wheel track
-        .withDimensions({AbstractMotor::gearset::blue, (84.0 / 36.0)}, {{4_in, 14.5_in}, imev5BlueTPR})
+        .withMotors({-5, -6, -8, -7}, {1, 2, 3, 4})
+        .withDimensions({AbstractMotor::gearset::blue, (60.0 / 60.0)}, {{3.25_in, 14.5_in}, imev5BlueTPR})
         /*.withSensors(
           RotationSensor{16, true}, // Left encoder in V5 port 16 (reversed, the rotation sensors are flipped)
           RotationSensor{6}  // Right encoder in V5 port 6
@@ -40,7 +42,7 @@ std::shared_ptr<OdomChassisController> chassis =
         .withOdometry()
         .withGains(
             {0.001, 0.0000001, 0.00001},
-            {0.0015, 0.000001, 0.00002},
+            {0.0015, 0.002, 0.0001},
             {0.001, 0.0000001, 0.00001}
           )
         /*.withDerivativeFilters(
