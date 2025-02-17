@@ -62,29 +62,29 @@ void intakeControl(){
 }
 void intake(){
     // intake one ring (for autonomous)
-    intakeMotorLeft.move(-max_analog);
-    intakeMotorRight.move(max_analog);
+    intakeMotorLeft.move_velocity(-600);
+    intakeMotorRight.move_velocity(600);
 
-    elevatorMotorLeft.move(max_analog);
-    elevatorMotorRight.move(-max_analog);
-    pros::delay(1000);
-    intakeMotorLeft.move(0);
-    intakeMotorRight.move(0);
+    elevatorMotorLeft.move_velocity(450 * 1.0);
+    elevatorMotorRight.move_velocity(-450 * 1.0);
+    pros::delay(500);
+    intakeMotorLeft.move_velocity(0);
+    intakeMotorRight.move_velocity(0);
 
-    elevatorMotorLeft.move(0);
-    elevatorMotorRight.move(0);
+    elevatorMotorLeft.move_velocity(0);
+    elevatorMotorRight.move_velocity(0);
 }
 void score(){
     // scores one ring in the goal (for autonomous)
-    intakeMotorLeft.move(-max_analog);
-    intakeMotorRight.move(max_analog);
+    intakeMotorLeft.move_velocity(-600);
+    intakeMotorRight.move_velocity(600);
 
-    elevatorMotorLeft.move(max_analog);
-    elevatorMotorRight.move(-max_analog);
+    elevatorMotorLeft.move_velocity(450 * 1.0);
+    elevatorMotorRight.move_velocity(-450 * 1.0);
     pros::delay(1000);
-    intakeMotorLeft.move(0);
-    intakeMotorRight.move(0);
+    intakeMotorLeft.move_velocity(0);
+    intakeMotorRight.move_velocity(0);
 
-    elevatorMotorLeft.move(0);
-    elevatorMotorRight.move(0);
+    elevatorMotorLeft.move_velocity(0);
+    elevatorMotorRight.move_velocity(0);
 }

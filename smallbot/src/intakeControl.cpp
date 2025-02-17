@@ -36,11 +36,11 @@ void intakeControl(){
     }
 
     if(master.get_digital(pros::E_CONTROLLER_DIGITAL_R1)){
-        armMotorLeft.move_velocity(-600);
-        armMotorRight.move_velocity(600);
+        armMotorLeft.move_velocity(-50);
+        armMotorRight.move_velocity(50);
     } else if(master.get_digital(pros::E_CONTROLLER_DIGITAL_R2)){
-        armMotorLeft.move_velocity(600);
-        armMotorRight.move_velocity(-600);
+        armMotorLeft.move_velocity(50);
+        armMotorRight.move_velocity(-50);
     } else {
         armMotorLeft.move_velocity(0);
         armMotorRight.move_velocity(0);

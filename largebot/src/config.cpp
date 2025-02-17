@@ -41,9 +41,9 @@ std::shared_ptr<OdomChassisController> chassis =
     		.withOdometry({{4_in, 12.25_in}, quadEncoderTPR})*/
         .withOdometry()
         .withGains(
-            {0.001, 0.0000001, 0.00001},
-            {0.0015, 0.002, 0.0001},
-            {0.001, 0.0000001, 0.00001}
+            {0.001, 0., 0.00001},
+            {0.0016, 0.0025, 0.00012},
+            {0.001, 0., 0.00001}
           )
         /*.withDerivativeFilters(
             std::make_unique<AverageFilter<3>>(), // Distance controller filter
