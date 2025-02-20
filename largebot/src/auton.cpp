@@ -30,18 +30,13 @@ void auton(){
     pros::delay(500);
     score();
 
-    /*chassis->moveDistance(-24_in);
-    chassis->turnAngle(-90_deg);
-    chassis->moveDistance(-2_in);
-    clampPiston.set_value(false);
-    chassis->moveDistance(2_in);
-    chassis->turnAngle(90_deg);
     chassis->moveDistance(-24_in);
-    clampPiston.set_value(true);
-    chassis->turnAngle(90_deg);
-    chassis->moveDistance(2_in);
+    chassis->turnAngle(210_deg);
+    chassis->moveDistance(24_in);
 
     intake();
-    score();*/
+    score();
+
+    chassis->moveDistance(-2_in);
     
 }
