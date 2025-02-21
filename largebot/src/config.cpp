@@ -7,11 +7,14 @@ pros::Motor right1(1, pros::E_MOTOR_GEARSET_06);
 pros::Motor right2(2, pros::E_MOTOR_GEARSET_06);
 pros::Motor right3(3, pros::E_MOTOR_GEARSET_06);
 pros::Motor right4(-4, pros::E_MOTOR_GEARSET_06); // bottom middle
+pros::Motor right5(9, pros::E_MOTOR_GEARSET_06); // bottom middle
 
 pros::Motor left1(5, pros::E_MOTOR_GEARSET_06);
 pros::Motor left2(6, pros::E_MOTOR_GEARSET_06);
 pros::Motor left3(-7, pros::E_MOTOR_GEARSET_06); // bottom middle
 pros::Motor left4(8, pros::E_MOTOR_GEARSET_06);
+pros::Motor left5(10, pros::E_MOTOR_GEARSET_06);
+
 
 pros::Motor intakeMotorLeft(11, pros::E_MOTOR_GEARSET_06);
 pros::Motor intakeMotorRight(12, pros::E_MOTOR_GEARSET_06);
@@ -32,7 +35,7 @@ pros::Motor_Group right ({right1, right2, right3, right4});
 
 std::shared_ptr<OdomChassisController> chassis =
       ChassisControllerBuilder()
-        .withMotors({-5, -6, -8, -7}, {1, 2, 3, 4})
+        .withMotors({-5, -6, -8, -7, -10}, {1, 2, 3, 4, 9})
         .withDimensions({AbstractMotor::gearset::blue, (60.0 / 60.0)}, {{3.25_in, 14.5_in}, imev5BlueTPR})
         /*.withSensors(
           RotationSensor{16, true}, // Left encoder in V5 port 16 (reversed, the rotation sensors are flipped)
