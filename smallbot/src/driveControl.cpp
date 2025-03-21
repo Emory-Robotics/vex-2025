@@ -15,5 +15,6 @@ void driveControl(){
 	right1.move_velocity(right * 600.0 / 128.0);
 	right2.move_velocity(right * 600.0 / 128.0);
     right3.move_velocity(right * 600.0 / 128.0);
+    right4.move_velocity(right * 600.0 / 128.0);
     
 }
